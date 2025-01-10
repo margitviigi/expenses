@@ -1,23 +1,30 @@
+import { useState } from 'react';
 import './App.css';
 import Expenses from './components/expenses/Expenses';
 import NewExpense from './components/newexpense/NewExpense';
 
-const App = () =>{
-  const expenses = [
+  const DUMMY_EXPENSES = [
     {
+    id: Math.random().toString(),
     date: new Date(2024, 10, 22),
     title:'New book',
     price: 39.99
     },
     {
+    id: Math.random().toString(),
     date: new Date(2024, 10, 22),
     title:'New bag',
     price: 99.99
     },  
-] 
+]
+const App = () =>{
+  const [expenses, setExpenses] = useState(DUMMY_EXPENSES)
+ 
+
 const addExpenseHandler = (expense) =>{
-  console.log('In App.js')
-  console.log(expense)
+  setExpenses((previousExpenses) => {
+    return [expense, ...previousExpenses] 
+  }  )
 }   
   return (
     <div className="App">
