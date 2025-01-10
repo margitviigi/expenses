@@ -5,6 +5,12 @@ import NewExpense from './components/newexpense/NewExpense';
 
   const DUMMY_EXPENSES = [
     {
+      id: Math.random().toString(),
+      date: new Date(2025, 0, 5),
+      title:'New hangers',
+      price: 5.99
+      },
+    {
     id: Math.random().toString(),
     date: new Date(2024, 10, 22),
     title:'New book',
