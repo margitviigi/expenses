@@ -5,20 +5,20 @@ import App from './App';
 import ReactDOM from 'react-dom';
 
 beforeEach(() => {
-  // Clean up old containers
+
   const existingBackdrop = document.getElementById('backdrop-root');
   if (existingBackdrop) existingBackdrop.remove();
 
   const existingOverlay = document.getElementById('overlay-root');
   if (existingOverlay) existingOverlay.remove();
 
-  // Create new containers for portals
+
   const backdropRoot = document.createElement('div');
   backdropRoot.setAttribute('id', 'backdrop-root');
   document.body.appendChild(backdropRoot);
 
   const overlayRoot = document.createElement('div');
-  overlayRoot.setAttribute('id', 'overlay-root');  // Correct id matching Error.js
+  overlayRoot.setAttribute('id', 'overlay-root'); 
   document.body.appendChild(overlayRoot);
 });
 
